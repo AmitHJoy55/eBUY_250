@@ -1,4 +1,5 @@
 import 'package:ebuy_250/Pages/auth_page.dart';
+import 'package:ebuy_250/Pages/user_profile.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'firebase_options.dart';
@@ -19,7 +20,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return  MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: LoginPage(),
+      home: AuthPage(),
     );
   }
 }
