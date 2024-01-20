@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:ebuy_250/Pages/user_profile.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -5,7 +6,11 @@ import 'package:flutter/cupertino.dart';
 
 class NavBar extends StatelessWidget{
 
-  const NavBar({super.key});
+    NavBar({super.key});
+   final currentUser = FirebaseAuth.instance.currentUser!;
+   //All users
+   final usersCollection = FirebaseFirestore.instance.collection("Users");
+
 
   void signOut(){
     FirebaseAuth.instance.signOut();
@@ -18,14 +23,13 @@ class NavBar extends StatelessWidget{
         padding: EdgeInsets.zero,
         children: [
           UserAccountsDrawerHeader(
-              accountName: Text(
-                  'Amit Hassan Joy',
+              accountName: Text( 'Amit Hassan Joy',
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
                 ),
               ),
               accountEmail: Text(
-                  'test@gmail.com',
+                currentUser.email!,
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
                 ),
@@ -33,7 +37,7 @@ class NavBar extends StatelessWidget{
             currentAccountPicture: CircleAvatar(
               child: ClipOval(
                 child: Image.network(
-                  'https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=1600',
+                  'https://img.freepik.com/free-photo/handsome-corporate-man-real-estate-agent-assistant-smiling-hold-hands-together-how-may-i-help-you-smiling-friendly-polite-assist-customer-white-background_176420-45257.jpg?w=996&t=st=1705735955~exp=1705736555~hmac=8b6d7cf85c43fd116810e69314d8ce0b51d61574c6a967676b88b87b41396b11',
                   width: 90,
                   height: 90,
                   fit: BoxFit.cover,

@@ -16,7 +16,13 @@ class _PostWiget extends State<PostWiget>{
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return Scaffold(
+        backgroundColor: Colors.white,
+        appBar: AppBar(title: Text("Edit Post"),
+    backgroundColor: Color(0xfff57BEE7),
+    ),
+
+      body : Container(
 
       margin: EdgeInsets.all(10),
 
@@ -118,7 +124,7 @@ class _PostWiget extends State<PostWiget>{
             Container(
               margin: EdgeInsets.fromLTRB(15.0,0.0,15.0,15.0),
               child: Button(
-                text:'Post your sell',
+                text:'Post',
                 onTap: (){
                   Navigator.pop(context);
                 },
@@ -127,6 +133,7 @@ class _PostWiget extends State<PostWiget>{
           ],
         ),
       ),
+    )
     );
   }
 }

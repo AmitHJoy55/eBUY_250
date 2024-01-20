@@ -31,7 +31,7 @@ class _PostLinkWiget extends State<PostLinkWiget>{
                     padding: EdgeInsets.all(16),
                     child : ClipOval(
                       child: Image.network(
-                        'https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=1600',
+                        'https://img.freepik.com/free-photo/handsome-corporate-man-real-estate-agent-assistant-smiling-hold-hands-together-how-may-i-help-you-smiling-friendly-polite-assist-customer-white-background_176420-45257.jpg?w=996&t=st=1705735955~exp=1705736555~hmac=8b6d7cf85c43fd116810e69314d8ce0b51d61574c6a967676b88b87b41396b11',
                         width: 55,
                         height: 55,
                         fit: BoxFit.cover,
@@ -75,12 +75,7 @@ class _PostLinkWiget extends State<PostLinkWiget>{
         ),
       ),
       onTap: (){
-        showModalBottomSheet(
-            context: context,
-            builder: (BuildContext){
-              return PostWiget();
-            },
-        );
+        Navigator.push(context, MaterialPageRoute(builder: (context) =>  PostWiget()) );
       },
     );
   }
