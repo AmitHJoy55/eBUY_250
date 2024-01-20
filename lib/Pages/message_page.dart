@@ -11,13 +11,13 @@ class MessagePage extends StatelessWidget {
         padding: EdgeInsets.all(16.0),
         children: [
           MessageItem(
-            sender: 'Md. Arnob',
+            sender: 'Arnob Sen',
             message: 'Please, could you send me some pic of your product!',
             time: '2 hours ago',
             unread: true,
           ),
           MessageItem(
-            sender: 'Md. Moloy',
+            sender: 'Moloy',
             message: 'Special offer: Buy 2, get 1 free!',
             time: 'Yesterday',
             unread: false,

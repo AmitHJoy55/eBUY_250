@@ -7,6 +7,7 @@ class SettingsPage extends StatefulWidget {
 
 class _SettingsPageState extends State<SettingsPage> {
   bool notificationsEnabled = true;
+  bool tstepvEnabled = false;
 
   @override
   Widget build(BuildContext context) {
@@ -21,6 +22,22 @@ class _SettingsPageState extends State<SettingsPage> {
           children: [
             Text(
               'Notification Settings',
+              style: TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            SwitchListTile(
+              title: Text('Enable Notifications'),
+              value: tstepvEnabled,
+              onChanged: (value) {
+                setState(() {
+                  tstepvEnabled = value;
+                });
+              },
+            ),
+            Text(
+              'Two Step Verification',
               style: TextStyle(
                 fontSize: 20,
                 fontWeight: FontWeight.bold,
