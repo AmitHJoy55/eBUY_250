@@ -12,6 +12,7 @@ class _PostLinkWiget extends State<PostLinkWiget>{
 
   @override
   Widget build(BuildContext context) {
+
     return GestureDetector(
       child: Container(
         margin: EdgeInsets.all(10),
@@ -28,7 +29,7 @@ class _PostLinkWiget extends State<PostLinkWiget>{
               Row(
                 children: [
                   Padding(
-                    padding: EdgeInsets.all(16),
+                    padding: EdgeInsets.all(15),
                     child : ClipOval(
                       child: Image.network(
                         'https://img.freepik.com/free-photo/handsome-corporate-man-real-estate-agent-assistant-smiling-hold-hands-together-how-may-i-help-you-smiling-friendly-polite-assist-customer-white-background_176420-45257.jpg?w=996&t=st=1705735955~exp=1705736555~hmac=8b6d7cf85c43fd116810e69314d8ce0b51d61574c6a967676b88b87b41396b11',
@@ -55,21 +56,20 @@ class _PostLinkWiget extends State<PostLinkWiget>{
                       ),
                     ),
                   ),
-                  SizedBox(width: 16.0),
+                  SizedBox(width: 10.0),
                   Icon(Icons.attach_file),
-                  SizedBox(width: 16.0),
+                  SizedBox(width: 5.0),
+                  Padding(
+                    padding: EdgeInsets.fromLTRB(10.0, 0, 10, 0),
+                    child: Button(
+                      text:'Post',
+                      onTap: (){},
+                    ),
+                  ),
+
                 ],
               ),
-              Padding(
-                padding: EdgeInsets.fromLTRB(10.0, 0, 10, 0),
-                child: Button(
-                  text:'Post',
-                  onTap: (){},
-                ),
-              ),
-              SizedBox(
-                height: 10,
-              ),
+
             ],
           ),
         ),

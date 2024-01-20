@@ -1,4 +1,9 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:ebuy_250/Pages/home_page.dart';
+import 'package:ebuy_250/Pages/message_page.dart';
+import 'package:ebuy_250/Pages/notification_page.dart';
+import 'package:ebuy_250/Pages/policy_page.dart';
+import 'package:ebuy_250/Pages/setting_page.dart';
 import 'package:ebuy_250/Pages/user_profile.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -14,11 +19,14 @@ class NavBar extends StatelessWidget{
 
   void signOut(){
     FirebaseAuth.instance.signOut();
+    // onTap() =>  Navigator.push(context,
+    //     MaterialPageRoute(builder: (context) => ProfilePage()) );
   }
 
   @override
   Widget build(BuildContext context) {
     return Drawer(
+      backgroundColor:  Color(0xfff57BEE7),
       child: ListView(
         padding: EdgeInsets.zero,
         children: [
@@ -54,10 +62,9 @@ class NavBar extends StatelessWidget{
           ),
 
 
-
           ListTile(
             leading: Icon(Icons.person),
-            title: Text('P R O F I L E'),
+            title: Text('P R O F I L E', ),
             onTap:  (){
               Navigator.push(
                   context,
@@ -70,7 +77,9 @@ class NavBar extends StatelessWidget{
           ListTile(
             leading: Icon(Icons.message),
             title: Text('M E S S A G E S'),
-            onTap:  () => null,
+            onTap:  () => Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => MessagePage()) ),
             trailing: ClipOval(
               child: Container(
                 color: Colors.red,
@@ -92,30 +101,34 @@ class NavBar extends StatelessWidget{
 
 
           ListTile(
-            leading: Icon(Icons.share),
-            title: Text('S H A R E'),
-            onTap:  () => null,
+            leading: Icon(Icons.notification_add),
+            title: Text('N O T I F I C A T I O N S'),
+            onTap:  () => Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => NotificationPage()) ),
           ),
 
 
           ListTile(
             leading: Icon(Icons.settings),
             title: Text('S E T T I N G S'),
-            onTap:  () => null,
+            onTap:  () => Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => SettingsPage()) ),
           ),
 
 
           ListTile(
             leading: Icon(Icons.policy),
             title: Text('P O L I C E S'),
-            onTap:  () => null,
+            onTap:  () => Navigator.push(context, MaterialPageRoute(builder: (context) => PoliciesPage()) ),
           ),
 
 
           ListTile(
             leading: Icon(Icons.dashboard),
             title: Text('D A S H B O A R D'),
-            onTap:  () => null,
+            onTap:  () => Navigator.push(context, MaterialPageRoute(builder: (context) => const HomePage()) ),
             trailing: ClipOval(
               child: Container(
                 color: Colors.red,

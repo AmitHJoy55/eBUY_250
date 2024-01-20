@@ -21,11 +21,8 @@ class _PostWiget extends State<PostWiget>{
         appBar: AppBar(title: Text("Edit Post"),
     backgroundColor: Color(0xfff57BEE7),
     ),
-
       body : Container(
-
       margin: EdgeInsets.all(10),
-
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(20),

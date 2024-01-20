@@ -4,7 +4,6 @@ import 'package:google_fonts/google_fonts.dart';
 
 class MsgButton extends StatelessWidget{
 
-
   const MsgButton({
     super.key
   });
@@ -29,5 +28,4 @@ class MsgButton extends StatelessWidget{
       ),
     );
   }
-
 }
