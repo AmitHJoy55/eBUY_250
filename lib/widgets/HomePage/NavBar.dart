@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:ebuy_250/Pages/home_page.dart';
+import 'package:ebuy_250/Pages/login_page.dart';
 import 'package:ebuy_250/Pages/message_page.dart';
 import 'package:ebuy_250/Pages/notification_page.dart';
 import 'package:ebuy_250/Pages/policy_page.dart';
@@ -19,8 +20,6 @@ class NavBar extends StatelessWidget{
 
   void signOut(){
     FirebaseAuth.instance.signOut();
-    // onTap() =>  Navigator.push(context,
-    //     MaterialPageRoute(builder: (context) => ProfilePage()) );
   }
 
   @override
@@ -151,7 +150,10 @@ class NavBar extends StatelessWidget{
           ListTile(
             leading: Icon(Icons.logout),
             title: Text('L O G O U T'),
-            onTap:  signOut,
+            onTap:  (){
+              signOut();
+              Navigator.push(context, MaterialPageRoute(builder: (context) => LoginPage()) );
+            },
           ),
         ],
       ),

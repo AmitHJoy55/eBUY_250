@@ -59,7 +59,7 @@ class _RegPage extends State<RegPage>{
         'bio' : 'Empty bio..'
       });
 
-      Navigator.push(context, MaterialPageRoute(builder: (context) =>  HomePage()) );
+
 
       FirebaseFirestore.instance.collection('users').add({
         'username': usernameController.text,
@@ -71,6 +71,7 @@ class _RegPage extends State<RegPage>{
       Navigator.pop(context);
       DisplayError(e.code);
     }
+    Navigator.push(context, MaterialPageRoute(builder: (context) =>  HomePage()) );
 
   }
 
